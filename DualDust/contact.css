@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0c1c2c;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0f2b44;
+}
+
+.header .logo {
+  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+}
+
+.header nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.header nav a {
+  color: #cce7ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.header nav a:hover {
+  color: #83c8ff;
+}
+
+/* Contact Section */
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem 2rem;
+  gap: 3rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-box {
+  background-color: #152d45;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 350px;
+  animation: fadeIn 1s ease-in;
+}
+
+.contact-box h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
+  color: #a0d4ff;
+}
+
+.contact-box p {
+  margin-bottom: 1.5rem;
+  color: #d0ecff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #0f253c;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #a2c8e7;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #1792d2;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #116aa0;
+}
+
+/* Contact Info */
+.contact-info {
+  background-color: #1b3f5d;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 300px;
+  animation: fadeInUp 1.2s ease;
+}
+
+.contact-info h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+  color: #a0d4ff;
+}
+
+.contact-info p {
+  margin-bottom: 0.8rem;
+  color: #c9eaff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,336 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #0a1124 0%, #071731 100%);
+  color: #ffffff;
+  transition: background 0.5s, color 0.5s;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+/* LOGIN BUTTON */
+.login-btn {
+  padding: 10px 20px;
+  background: #1792d2;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #116aa0;
+}
+
+/* MODAL STYLES */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 80px;
+}
+
+.modal-content {
+  background: #142d45;
+  color: #fff;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+/* FORM TOGGLING */
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  gap: 10px;
+}
+
+.tab {
+  background-color: #1b3a55;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #cde8ff;
+  transition: background 0.3s;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input#login:checked ~ .tabs label[for="login"],
+input#signup:checked ~ .tabs label[for="signup"] {
+  background-color: #1792d2;
+  color: #fff;
+}
+
+.form {
+  display: none;
+}
+
+input#login:checked ~ .login-form {
+  display: block;
+}
+
+input#signup:checked ~ .signup-form {
+  display: block;
+}
+
+/* FORM STYLING */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #1e4569;
+  color: #fff;
+}
+
+form input::placeholder {
+  color: #a6cbea;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1792d2;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #116aa0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background-color: rgba(5, 10, 25, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #72bcd4;
+  font-weight: bold;
+}
+
+.navbar nav a {
+  margin: 0 1rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar nav a:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #72bcd4;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+/* Hero Section - FIXED */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 2rem 6rem; /* increased bottom padding */
+  flex-wrap: wrap;
+  background: linear-gradient(to right, #0d1b2a, #1b263b);
+  animation: fadeIn 2s ease-in-out;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+  padding: 1rem;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  animation: slideUp 1s ease-in-out forwards;
+}
+
+.hero-text span {
+  color: #72bcd4;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero-text p {
+  margin-bottom: 2rem; /* increased spacing to push button down */
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.shop-btn {
+  padding: 0.9rem 1.8rem;
+  background: #72bcd4;
+  border: none;
+  color: #111;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+}
+
+.shop-btn:hover {
+  background: #9cd5e7;
+  transform: scale(1.05);
+}
+
+/* Reviews Section */
+.reviews {
+  padding: 3rem 2rem;
+  background: linear-gradient(180deg, #11253c, #0d1b2a);
+}
+
+.reviews h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  color: #72bcd4;
+  animation: slideUp 2s ease;
+}
+
+.review-box {
+  background: #1e2e44;
+  margin: 1rem auto;
+  padding: 1.2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  transition: background 0.3s ease, transform 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.review-box:hover {
+  background: #263d5a;
+  transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #0d121b;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .shop-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Keep this background on the hero section */
+.hero {
+  height: 100vh;
+  background: url('background.png') center center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 2rem;
+}
+
+/* Animation only for text inside the hero */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark transparent overlay */
+  z-index: 1;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
